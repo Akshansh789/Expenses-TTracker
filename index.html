@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/e51c99212f.js" crossorigin="anonymous"></script>
-  
-  <title>Expense Tracker</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-  <header>
-    <div class="navbar">
-      <h1><span><i class="fas fa-piggy-bank logo"></i></span> Expenses Tracker</h1>
-    </div>
-  </header>
-  <div class="navbar-image">
+    <header>
+        <h1 class="title">Expense Tracker App</h1>
+    <header>
 
-  </div>
-  <div class="menu-container">
-    <form class="add-form">
-      <div class="form-row">
-        <label for="date">Date:</label>
-        <input type="date" name="date" id="date">
-      </div>
-      <div class="form-row">
-        <label for="description">Description:</label>
-        <input type="text" id="description" placeholder="Company name">
-      </div>
-      <div class="form-row">
-        <label for="category">Category:</label>
-        <input type="text" id="category" placeholder="Gas, entertainment, etc">
-      </div>
-      <div class="form-row">
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" placeholder="Dollar amount">
-      </div>
-      <button class="submit-btn add-items" type="submit">Submit</button>
-  </div>
-  </form>
-  <div class="error-message"></div>
-  </div>
-  <div class="table-container">
-    <div class="expense-table">
-      <table>
-        <thead>
-          <tr id="id">
-            <th class="table-header date-header">Date <span><i class="fas fa-sort date-sort"></i></span></th>
-            <th class="table-header description-header">Description <span><i class="fas fa-sort description-sort"></i></span></th>
-            <th class="table-header category-header">Category <span><i class="fas fa-sort category-sort"></i></span></th>
-            <th class="table-header amount-header">Amount <span><i class="fas fa-sort amount-sort"></i></span></th>
-            <th class="table-header id-header">ID <span><i class="fas fa-sort id-sort"></i></span></th>
-            <th><i class="fas fa-minus-circle delete-icon delete-header delete-all"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <script src="app.js"></script>
+    <section class="content">
+        <h3 class="secondTitle">Add a new item: </h3>
+        <div class="form">
+            <form id="expForm">
+                <div class="formLine left">
+                    <span for="type">Type:</span>
+                    <select id="type">
+                        <option value="chooseOne">Choose one...</option>
+                        <option value="Card">Card</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Cryptocoin">Cryptocoin</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="formLine right">
+                    <span for="name">Name:</span>
+                    <input type="text" id="name">
+                </div>
+
+                <div class="formLine left">
+                    <span for="date">Date:</span>
+                    <input type="date" id="date">
+                </div>
+                <div class="formLine right">
+                    <span for="amount">Amount:</span>
+                    <input type="text" id="amount">
+                </div>
+                <button type="submit" class="buttonSave">Add a new expense</button>
+            </form>
+        </div>
+    </section>
+    <section class="content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody id="expenseTable">
+
+            </tbody>
+        </table>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="/app.js"></script>
 </body>
-
 </html>
